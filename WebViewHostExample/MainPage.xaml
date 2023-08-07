@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="WebViewHostExample.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:WebViewHostExample.Controls">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="0,0"
+            Spacing="25"
+            VerticalOptions="Center">
+            <ActivityIndicator Color="Orange" x:Name="Indicador" IsRunning="True" WidthRequest="400" HorizontalOptions="Center" />
+            <Label x:Name="Info" Text="Cargando información" HorizontalOptions="Center"></Label>
+            <!--<controls:HybridWebView
+                x:Name="MyWebView"
+                Source="pdfjs.html"
+                HeightRequest="900"
+                HorizontalOptions="Fill"
+                VerticalOptions="FillAndExpand"
+                WidthRequest="512" />-->
+
+            <controls:HybridWebView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="MyWebView" Source="{Binding Source}"></controls:HybridWebView>
+
+
+            <Button Clicked="EvalButton_ClickedAsync" Text="Reenderizar"></Button>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
